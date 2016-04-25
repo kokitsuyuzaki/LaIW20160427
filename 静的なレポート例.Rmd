@@ -87,14 +87,14 @@ Info | ggplot2 | 12.123
 
 最後に、文章内にRのコードを挿入する場合、以下のように書きます。
 
-```{r, echo=FALSE}
+```{r}
 iris.color <- c(rep(rgb(1,0,0,0.5), 50), rep(rgb(0,1,0,0.5), 50), rep(rgb(0,0,1,0.5), 50))
 pairs(iris[,1:4], col=iris.color, pch=16, cex=2)
 ```
 
 最後に、sessionInfo()や、Sys.time()を実行しておくと、このレポートが最後いつどのような環境で実行されたのかを、記録できます。
 
-```{r, echo=FALSE}
+```{r}
 sessionInfo()
 ```
 

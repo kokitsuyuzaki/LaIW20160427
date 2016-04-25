@@ -17,7 +17,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## 背景・目的
-Rのdata(iris)コマンドで呼び出されるirisデータは、Iris setosa, Iris versicolor, Iris virginica3種の（**図.1**）、萼片（Sepal）と花弁（Petal）の幅と長さを計測されたものである（**図.2**）。
+Rのdata(iris)コマンドで呼び出されるirisデータは、Iris setosa, Iris versicolor, Iris virginica3種の（**図.1**）、萼片（Sepal）と花弁（Petal）の幅と長さを計測したものである（**図.2**）。
 
 ![図.1 : 3種類のIris](http://i1.wp.com/www.timsayf.com/wp-content/uploads/2015/09/irises.png)
 
@@ -82,7 +82,7 @@ pairs(iris[,1:4], col=iris.color, pch=16, cex=2)
 ```
 
 ## 環境
-```{r, echo=FALSE}
+```{r}
 sessionInfo()
 ```
 
