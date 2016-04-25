@@ -1,0 +1,103 @@
+---
+title: "マークダウン記法の練習（静的なレポート例）"
+author: "露崎弘毅 <koki.tsuyuzaki@riken.jp>"
+date: "2016年4月25日"
+output:
+  html_document: default
+  pdf_document:
+    latex_engine: xelatex
+  word_document: default
+mainfont: Hiragino Kaku Gothic Pro
+---
+
+<!-- ↑ 上はYAMLという記法で、ここに設定を書く -->
+
+<!-- ↓  knitrの設定 -->
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+<!-- ↓  以下は、基本的なマークダウン記法 -->
+
+文章を書いていきます
+
+斜体は、*斜体*や _斜体_ のように書きます
+
+太字は、**太字**や __太字__ のように書きます
+
+箇条書きは、ハイフン、またはアスタリスクを使います
+
+- AAA
+- BBB
+- CCC
+
+* 11111
+* 22222
+* 33333
+
+2段組で作りたい場合、さらにプラス記号を使います
+
+- AAA
+    + aaa
+- BBB
+    + bbb
+- CCC
+    + ccc
+
+順序のある箇条書きの場合は、数字を先頭に書きます
+
+1. Q
+2. W
+3. E
+4. R
+5. T
+6. Y
+
+文章内に上付き文字 2^4^や、数式 $A = \pi*r^{2}$を埋め込むことも可能です。
+
+画像も埋め込めます
+
+![R](https://www.r-project.org/Rlogo.png)
+
+URLリンク [link](http://www.rstudio.com) も埋め込めます。
+
+~~訂正線は、波線記号二つで該当箇所を挟みます~~
+
+文章が長くなる場合、シャープ記号で見出しごとに書いていきましょう
+
+# 見出し 1
+
+## 見出し 2
+
+### 見出し 3
+
+水平線は、アスタリスクを使います
+
+***
+
+> 誰かの言葉を引用するときは、大なり記号を使います
+
+行列は、以下のように書きます
+
+左揃えで書く列  | 中央揃えで書く列 | 右揃えに書く列（数字の時）
+:------------- | :-------------: | -------------:
+Life | Visualization | 0.024
+Info | ggplot2 | 12.123
+
+最後に、文章内にRのコードを挿入する場合、以下のように書きます。
+
+```{r, echo=FALSE}
+iris.color <- c(rep(rgb(1,0,0,0.5), 50), rep(rgb(0,1,0,0.5), 50), rep(rgb(0,0,1,0.5), 50))
+pairs(iris[,1:4], col=iris.color, pch=16, cex=2)
+```
+
+最後に、sessionInfo()や、Sys.time()を実行しておくと、このレポートが最後いつどのような環境で実行されたのかを、記録できます。
+
+```{r, echo=FALSE}
+sessionInfo()
+```
+
+```{r timelog}
+Sys.time()
+```

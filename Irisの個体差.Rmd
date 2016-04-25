@@ -1,0 +1,91 @@
+---
+title: "Irisの個体差について（インタラクティブなレポート例）"
+author: "露崎弘毅 <koki.tsuyuzaki@gmail.com>"
+date: "2016年4月25日"
+output:
+  slidy_presentation: default
+  ioslides_presentation: default
+  beamer_presentation:
+    pandoc_args: --latex-engine=xelatex
+mainfont: Hiragino Kaku Gothic Pro
+header-includes: null
+footer: "Copyright (c) 2016, Koki Tsuyuzaki"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 背景・目的
+Rのdata(iris)コマンドで呼び出されるirisデータは、Iris setosa, Iris versicolor, Iris virginica3種の（**図.1**）、萼片（Sepal）と花弁（Petal）の幅と長さを計測されたものである（**図.2**）。
+
+![図.1 : 3種類のIris](http://i1.wp.com/www.timsayf.com/wp-content/uploads/2015/09/irises.png)
+
+![図.2 : Irisの萼片と花弁](http://i2.wp.com/www.timsayf.com/wp-content/uploads/2015/09/iris_petal_sepal.png)
+
+irisデータは、テストデータとして多用されているが、その内容、特に個体差の詳細を調べているものは少ないので調べた。
+
+## 手法
+irisデータを主成分分析し、その結果を**インタラクティブ**な図として可視化することで、外れ値である可能性がある個体番号を取得する。
+
+ここで、インタラクティブな図とは、図のズームイン、ズームアウト、スライド、回転など、ユーザーの操作に反応して、何らかのアクションをする、静止画ではない図である。
+
+![図.3 : plotlyによるインタラクティブな描画の様子](https://qiita-image-store.s3.amazonaws.com/0/17038/3798d5b8-e227-c6c9-4282-41bf03747064.png)
+
+![図.4 : ggpairsによるインタラクティブな描画の様子](https://qiita-image-store.s3.amazonaws.com/0/17038/5a2b89fe-df30-9eea-cddf-10ea96230498.png)
+
+## 結果
+
+可視化ツールとして、pairs, ggpairs, pairsD3, plotlyを利用した。
+
+まず、後でデータ点を色付けするために、色の設定をおこなった。setosaには赤、versicolorには緑、virginicaには青を指定する、iris.colorというベクトルを作った。
+
+```{r}
+iris.color <- c(rep(rgb(1,0,0,0.5), 50), rep(rgb(0,1,0,0.5), 50), rep(rgb(0,0,1,0.5), 50))
+```
+
+irisをpairsとggpairs関数を使い、ペアプロットで可視化した。setosaの中に、他よりも萼片の幅が小さい外れ値な個体があるように見えた。
+
+```{r}
+# ペアプロット
+pairs(iris[,1:4], col=iris.color, pch=16, cex=2)
+# ペアプロット（GGally）
+library("GGally")
+ggpairs(iris, mapping = ggplot2::aes(color=Species, alpha=0.5))
+```
+
+上記の関数は、インタラクティブではないため、外れ値個体の個体番号は取得できない。そこで、ここでは、pairsD3やplotlyを使った。ただし、plotlyは、色の設定が難しかったため、特に設定せずに可視化したところ、setosaが青、versicolorがオレンジ、virginivaは緑になった。
+
+```{r}
+
+# ペアプロット（pairsD3）
+library("pairsD3")
+pairsD3(iris[,1:4], group=iris[,5], col=c("red", "green", "blue"))
+
+# PCA
+iris.pca <- prcomp(t(iris[,1:4]), scale=TRUE)
+
+# 3Dプロット（plotly）
+library("plotly")
+plot_ly(as.data.frame(iris.pca$rotation[,1:3]), x=PC1, y=PC2, z=PC3, type="scatter3d", mode="markers", text=rownames(iris), color=iris[,5])
+```
+
+これらの図の外れ値個体にカーソルを合わせることで、外れ値個体は、42番目の個体であることがわかった。
+
+## 考察
+
+42番目の個体の花弁の長さ・幅はともに、他の個体と同程度であるのに対し、萼片は、長さ・幅ともに小さいようである。この個体だけ何か変異が起きているかもしれない。
+
+```{r, echo=FALSE}
+# ペアプロット
+pairs(iris[,1:4], col=iris.color, pch=16, cex=2)
+```
+
+## 環境
+```{r, echo=FALSE}
+sessionInfo()
+```
+
+```{r timelog}
+Sys.time()
+```
