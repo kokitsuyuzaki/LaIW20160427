@@ -39,7 +39,7 @@ install.packages("plotly")
 ```
 
 # 講義中で利用したスライドについて
-"ライフ&インフォ女子会.key"、または"ライフ&インフォ女子会.pdf"を参照してください
+[ライフ&インフォ女子会.key](https://www.dropbox.com/s/p5aa2xrfxbsaece/%E3%83%A9%E3%82%A4%E3%83%95%26%E3%82%A4%E3%83%B3%E3%83%95%E3%82%A9%E5%A5%B3%E5%AD%90%E4%BC%9A.key?dl=0)、または[ライフ&インフォ女子会.pdf](https://www.dropbox.com/s/c5iecvpa3largwk/%E3%83%A9%E3%82%A4%E3%83%95%26%E3%82%A4%E3%83%B3%E3%83%95%E3%82%A9%E5%A5%B3%E5%AD%90%E4%BC%9A.pdf?dl=0)を参照してください
 
 # 講義中で利用したコードについて
 "Tsuyuzaki.R"に全てかかれています。Rのコンソール画面にコピー&ペーストしてご利用ください
