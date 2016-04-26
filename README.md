@@ -15,7 +15,7 @@ R-Studioは、[R-Studio](https://www.rstudio.com/products/rstudio/download/)の�
 
 Latex環境は、[MacTex](https://tug.org/mactex/)の、MacTeX.pkgをダウンロードの上、インストールしてください
 
-pandocはR-Studioインストール時に、導入されるらしいですが、もし入っていない場合は、Macのhomebrewコマンドで以下のように実行してください
+pandocはR-Studioインストール時に、導入されるとのことですが、もし入っていない場合は、Macのhomebrewコマンドで以下のように実行してください
 
 ```{bash}
 brew install pandoc
