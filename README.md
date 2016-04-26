@@ -56,7 +56,7 @@ install.packages("plotly")
 [ライフ&インフォ女子会.key](https://www.dropbox.com/s/p5aa2xrfxbsaece/%E3%83%A9%E3%82%A4%E3%83%95%26%E3%82%A4%E3%83%B3%E3%83%95%E3%82%A9%E5%A5%B3%E5%AD%90%E4%BC%9A.key?dl=0)、または[ライフ&インフォ女子会.pdf](https://www.dropbox.com/s/c5iecvpa3largwk/%E3%83%A9%E3%82%A4%E3%83%95%26%E3%82%A4%E3%83%B3%E3%83%95%E3%82%A9%E5%A5%B3%E5%AD%90%E4%BC%9A.pdf?dl=0)を参照してください
 
 # 講義中で利用したコードについて
-"demo.R"に書かれています。Rのコンソール画面にコピー&ペーストしてご利用ください
+[demo.R](https://raw.githubusercontent.com/kokitsuyuzaki/LaIW20160427/master/demo.R)に書かれています。Rのコンソール画面にコピー&ペーストしてご利用ください
 
 # 講義中で説明したレポートについて
-"静的なレポート例.Rmd"、"Irisの個体差.Rmd"がそれに相当します。ダブルクリックで、R-Studioが起動するので、KNIT TO HTMLなどのボタンで、各フォーマットに変換してください
+[静的なレポート例.Rmd](https://raw.githubusercontent.com/kokitsuyuzaki/LaIW20160427/master/静的なレポート例.Rmd)、[Irisの個体差.Rmd](https://raw.githubusercontent.com/kokitsuyuzaki/LaIW20160427/master/Irisの個体差.Rmd)がそれに相当します。ダブルクリックで、R-Studioが起動するので、KNIT TO HTMLなどのボタンで、各フォーマットに変換してください
