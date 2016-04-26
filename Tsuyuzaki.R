@@ -43,6 +43,8 @@ ggplot(edited_iris2, aes(x=variable, y=value, color=variable, fill=variable)) + 
 ##################################################
 ######### Part II : さらに複雑なグラフの作図 #########
 ##################################################
+iris.color <- c(rep(rgb(1,0,0,0.5), 50), rep(rgb(0,1,0,0.5), 50), rep(rgb(0,0,1,0.5), 50))
+
 # ペアプロット
 pairs(iris[,1:4], col=iris.color, pch=16, cex=2)
 
