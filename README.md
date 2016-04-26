@@ -9,11 +9,11 @@
 3. Latex環境 : レポートのpdf形式への変換
 4. pandoc : レポートの様々な形式への変換
 
-Rは、[CRAN](https://cran.ism.ac.jp)の、Download R for (Mac) OS Xで、R-3.2.4.pkgをダウンロードの上、インストールしてください
+Rは、[CRAN Homepage](https://cran.ism.ac.jp)の、Download R for (Mac) OS Xで、R-3.2.4.pkgをダウンロードの上、インストールしてください
 
-R-Studioは、[R-Studio](https://www.rstudio.com/products/rstudio/download/)の、RStudio Mac OS X (64bit)をダウンロードの上、インストールしてください
+R-Studioは、[R-Studio Homepage](https://www.rstudio.com/products/rstudio/download/)の、RStudio Mac OS X (64bit)をダウンロードの上、インストールしてください
 
-Latex環境は、[MacTex](https://tug.org/mactex/)の、MacTeX.pkgをダウンロードの上、インストールしてください
+Latex環境は、[MacTex Homepage](https://tug.org/mactex/)の、MacTeX.pkgをダウンロードの上、インストールしてください
 
 pandocはR-Studioインストール時に、導入されるとのことですが、もし入っていない場合は、Macのhomebrewコマンドで以下のように実行してください
 
